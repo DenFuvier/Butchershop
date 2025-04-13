@@ -30,7 +30,7 @@
         {
             this.Login1 = new System.Windows.Forms.TextBox();
             this.Password = new System.Windows.Forms.TextBox();
-            this.Invate = new System.Windows.Forms.Button();
+            this.Invatea = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -49,31 +49,34 @@
             this.Password.Size = new System.Drawing.Size(192, 20);
             this.Password.TabIndex = 1;
             // 
-            // Invate
+            // Invatea
             // 
-            this.Invate.Location = new System.Drawing.Point(199, 90);
-            this.Invate.Name = "Invate";
-            this.Invate.Size = new System.Drawing.Size(75, 23);
-            this.Invate.TabIndex = 2;
-            this.Invate.Text = "Войти";
-            this.Invate.UseVisualStyleBackColor = true;
-            this.Invate.Click += new System.EventHandler(this.Invate_Click);
+            this.Invatea.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Invatea.Location = new System.Drawing.Point(199, 90);
+            this.Invatea.Name = "Invatea";
+            this.Invatea.Size = new System.Drawing.Size(75, 23);
+            this.Invatea.TabIndex = 2;
+            this.Invatea.Text = "Войти";
+            this.Invatea.UseVisualStyleBackColor = true;
+            this.Invatea.Click += new System.EventHandler(this.Invate_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 19);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(1, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 13);
+            this.label1.Size = new System.Drawing.Size(55, 20);
             this.label1.TabIndex = 3;
             this.label1.Text = "Логин";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 50);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(1, 47);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 13);
+            this.label2.Size = new System.Drawing.Size(67, 20);
             this.label2.TabIndex = 4;
             this.label2.Text = "Пароль";
             // 
@@ -84,7 +87,7 @@
             this.ClientSize = new System.Drawing.Size(286, 125);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.Invate);
+            this.Controls.Add(this.Invatea);
             this.Controls.Add(this.Password);
             this.Controls.Add(this.Login1);
             this.Name = "MainForm";
@@ -99,7 +102,7 @@
 
         private System.Windows.Forms.TextBox Login1;
         private System.Windows.Forms.TextBox Password;
-        private System.Windows.Forms.Button Invate;
+        private System.Windows.Forms.Button Invatea;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
     }

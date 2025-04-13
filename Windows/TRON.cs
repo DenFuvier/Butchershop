@@ -3,6 +3,7 @@ using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Windows.Forms;
 
 namespace Butchershop.Windows
@@ -21,9 +22,25 @@ namespace Butchershop.Windows
             GG.ReadOnly = true;
             GG.DoubleClick += GG_DoubleClick;
             ////////////////////
-
-           
+            this.BackColor = ColorTranslator.FromHtml("#FFF5E1");
+            button1.BackColor = ColorTranslator.FromHtml("#FFF5E1");
+            button2.BackColor = ColorTranslator.FromHtml("#FFF5E1");
+            button1.MouseEnter += button1_MouseEnter;
+            button1.MouseLeave += button1_MouseLeave;
+            button2.MouseEnter += button2_MouseEnter;
+            button2.MouseLeave += button2_MouseLeave;
+            GG.CellMouseEnter += GG_CellMouseEnter;
+            GG.CellMouseLeave += GG_CellMouseLeave;
+            GG.DefaultCellStyle.BackColor = ColorTranslator.FromHtml("#FFF5E1");
+            GG.DefaultCellStyle.ForeColor = Color.Black;
         }
+        private void GG_CellMouseEnter(object sender, DataGridViewCellEventArgs e) { if (e.RowIndex >= 0 && e.ColumnIndex >= 0) { GG.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = ColorTranslator.FromHtml("#8B0000"); GG.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = Color.White; }  }
+        private void GG_CellMouseLeave(object sender, DataGridViewCellEventArgs e) { if (e.RowIndex >= 0 && e.ColumnIndex >= 0) { GG.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = ColorTranslator.FromHtml("#FFF5E1"); GG.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = Color.Black; }  }
+        private void GG_CellMouseLeave(object sender, EventArgs e) {  }
+        private void button1_MouseEnter(object sender, EventArgs e) { button1.BackColor = ColorTranslator.FromHtml("#8B0000"); button1.ForeColor = Color.White; }
+        private void button1_MouseLeave(object sender, EventArgs e) { button1.BackColor = ColorTranslator.FromHtml("#FFF5E1"); button1.ForeColor = Color.Black; }
+        private void button2_MouseEnter(object sender, EventArgs e) { button2.BackColor = ColorTranslator.FromHtml("#8B0000"); button2.ForeColor = Color.White; }
+        private void button2_MouseLeave(object sender, EventArgs e) { button2.BackColor = ColorTranslator.FromHtml("#FFF5E1"); button2.ForeColor = Color.Black; }
         private void GG_DoubleClick(object sender, EventArgs e)
         {
          int number = GG.CurrentRow.Index;
@@ -90,6 +107,8 @@ namespace Butchershop.Windows
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
+            DialogsDrop dialogsDrop = new DialogsDrop();
+            dialogsDrop.Show();
 
         }
 

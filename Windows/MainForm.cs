@@ -23,7 +23,19 @@ namespace Butchershop
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
-           
+            this.BackColor = ColorTranslator.FromHtml("#FFF5E1");
+            Invatea.MouseEnter += Invatea_MouseEnter;
+            Invatea.MouseLeave += Invatea_MouseLeave;
+        }
+        private void Invatea_MouseEnter(object sender, EventArgs e)
+        {
+            Invatea.BackColor = ColorTranslator.FromHtml("#8B0000");
+            Invatea.ForeColor = Color.White;
+        }
+        private void Invatea_MouseLeave(object sender, EventArgs e)
+        {
+            Invatea.BackColor = ColorTranslator.FromHtml("#FFF5E1");
+            Invatea.ForeColor = Color.Black;
         }
         public void AnalUsers()
         {
@@ -63,12 +75,14 @@ namespace Butchershop
                 Checks(Job_title);
                 Admin_GO admin_GO = new Admin_GO();
                 admin_GO.Show();
+                this.Hide();
             }
             else if (Job_PROF == "Сотрудник")
             {
                 Checks(Job_title);
                 DialogsDrop sialogsDrop = new DialogsDrop();
                 sialogsDrop.Show();
+                this.Hide();
             }
         }
         public void Checks(string Job_title)
@@ -76,7 +90,7 @@ namespace Butchershop
             
             if (Job_title == "Активен")
             {
-                MessageBox.Show("Есть доступ");
+              //  MessageBox.Show("Есть доступ");
             }
             else if (Job_title == "Забанен")
             {
